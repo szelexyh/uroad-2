@@ -1,0 +1,108 @@
+/* ===== 基础重置 ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;color:#333;line-height:1.7}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%}
+.container{width:min(1200px,92%);margin:0 auto}
+.section{padding:80px 0}
+.section-gray{background:#f6f8fa}
+.section-dark{background:#0d2137;color:#fff}
+.section-title{text-align:center;font-size:32px;margin-bottom:50px;position:relative}
+.section-title::after{content:"";display:block;width:60px;height:3px;background:#1a73c0;margin:14px auto 0}
+
+/* ===== 导航 ===== */
+#header{position:fixed;top:0;left:0;width:100%;z-index:100;
+  padding:18px 0;transition:all .4s;background:linear-gradient(to bottom,rgba(0,0,0,.45),transparent)}
+#header.scrolled{background:#0d2137;padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo img{height:44px;width:auto}
+.logo-text{font-size:20px;font-weight:700;line-height:1.2;display:flex;flex-direction:column}
+.logo-text em{font-style:normal;font-size:11px;font-weight:400;letter-spacing:2px;opacity:.85}
+#nav ul{display:flex;gap:34px;align-items:center}
+#nav a{color:#fff;font-size:15px;padding:6px 0;position:relative}
+#nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:#4db2ff;transition:.3s}
+#nav a:hover::after{width:100%}
+#menu-btn{display:none;background:none;border:0;cursor:pointer}
+#menu-btn span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:.3s}
+
+/* ===== 首屏：背景图 + 智能遮罩 ===== */
+#hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:center;
+  background:url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat #0d2137}
+/* 换自己的背景图：把上面 url 改为 url("../images/hero-bg.jpg") */
+.hero-mask{position:absolute;inset:0;   /* ← 智能遮罩层 */
+  background:linear-gradient(115deg,rgba(8,22,40,.78) 0%,rgba(13,33,55,.55) 45%,rgba(13,33,55,.25) 100%)}
+.hero-content{position:relative;z-index:1;text-align:center;width:100%;color:#fff}
+.hero-content h1{font-size:clamp(32px,5vw,56px);letter-spacing:6px;margin-bottom:14px;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.hero-content p{font-size:clamp(14px,2vw,20px);letter-spacing:3px;opacity:.9;margin-bottom:36px}
+.btn{display:inline-block;background:#1a73c0;color:#fff;padding:14px 46px;border:0;font-size:16px;
+  letter-spacing:4px;cursor:pointer;transition:.3s;border-radius:2px}
+.btn:hover{background:#4db2ff;transform:translateY(-2px)}
+
+/* ===== 服务板块 ===== */
+.services-layout{display:grid;grid-template-columns:240px 1fr;gap:40px}
+.services-tabs{border-right:1px solid #e3e8ee}
+.services-tabs li{padding:14px 18px;cursor:pointer;font-size:16px;border-left:3px solid transparent;transition:.3s;color:#555}
+.services-tabs li:hover{color:#1a73c0}
+.services-tabs li.active{color:#1a73c0;border-left-color:#1a73c0;background:#f0f7fd;font-weight:600}
+.panel{display:none;animation:fade .5s}
+.panel.active{display:block}
+.panel h3{font-size:24px;color:#0d2137;margin-bottom:16px}
+.panel p{color:#666}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ===== 解决方案 ===== */
+.solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.sol-card{background:#fff;padding:40px 30px;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.06);
+  border-top:3px solid transparent;transition:.35s}
+.sol-card:hover{transform:translateY(-6px);border-top-color:#1a73c0;box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.sol-card h3{font-size:19px;margin-bottom:12px;color:#0d2137}
+.sol-card p{font-size:14px;color:#777}
+
+/* ===== 全球网络 ===== */
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:50px}
+.regions li{background:#f0f7fd;color:#0d2137;text-align:center;padding:22px 10px;border-radius:4px;
+  font-weight:600;letter-spacing:1px;transition:.3s}
+.regions li:hover{background:#1a73c0;color:#fff;transform:translateY(-4px)}
+.about-text{max-width:860px;margin:0 auto;text-align:center}
+.about-text h3{font-size:24px;margin-bottom:16px;color:#0d2137}
+.about-text p{color:#666}
+
+/* ===== 数据统计 ===== */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
+.stat .num{font-size:48px;font-weight:700;color:#4db2ff}
+.stat i{font-style:normal;font-size:22px;color:#4db2ff;margin-left:4px}
+.stat p{margin-top:8px;opacity:.85}
+
+/* ===== 联系我们 ===== */
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-list li{margin-bottom:16px;color:#555}
+.quote-form{display:grid;gap:16px}
+.quote-form input,.quote-form textarea{width:100%;padding:14px 16px;border:1px solid #d6dde5;border-radius:4px;
+  font-size:15px;font-family:inherit;outline:none;transition:.3s}
+.quote-form input:focus,.quote-form textarea:focus{border-color:#1a73c0;box-shadow:0 0 0 3px rgba(26,115,192,.12)}
+
+/* ===== Footer ===== */
+#footer{background:#0a1929;color:#aebdcd;padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-bottom:40px}
+#footer h4{color:#fff;margin-bottom:18px;font-size:17px}
+#footer ul li{margin-bottom:10px;font-size:14px}
+#footer a:hover{color:#4db2ff}
+.copyright{border-top:1px solid rgba(255,255,255,.08);text-align:center;padding:18px;font-size:13px}
+
+/* ===== 响应式 ===== */
+@media(max-width:860px){
+  #nav{position:fixed;top:0;right:-260px;width:250px;height:100vh;background:#0d2137;
+    padding:80px 30px;transition:.35s}
+  #nav.open{right:0}
+  #nav ul{flex-direction:column;gap:26px}
+  #menu-btn{display:block;z-index:101}
+  .services-layout,.contact-layout{grid-template-columns:1fr}
+  .services-tabs{border-right:0;border-bottom:1px solid #e3e8ee;display:flex;flex-wrap:wrap}
+  .services-tabs li{border-left:0;border-bottom:3px solid transparent;padding:10px 14px}
+  .services-tabs li.active{border-bottom-color:#1a73c0;border-left:0}
+  .footer-grid{grid-template-columns:1fr}
+  .section{padding:56px 0}
+}
