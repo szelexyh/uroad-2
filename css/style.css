@@ -164,3 +164,7 @@ img{max-width:100%}
 .lang-btn{flex-shrink:0;margin-left:20px;border:1px solid rgba(255,255,255,.65);color:#fff;
   padding:6px 16px;border-radius:20px;font-size:13px;letter-spacing:1px;transition:.3s}
 .lang-btn:hover{background:#fff;color:#0d2137;border-color:#fff}
+/* 导航菜单靠右，贴近语言切换按钮 */
+@media (min-width:861px){
+  #nav{margin-left:auto}
+}
