@@ -153,3 +153,10 @@ img{max-width:100%}
   .service-icons{grid-template-columns:repeat(2,1fr)}
   .s-icon .circle{width:88px;height:88px;font-size:30px}
 }
+/* 统计数字与单位同行显示 */
+.stat .stat-line{display:flex;align-items:baseline;justify-content:center;white-space:nowrap;gap:4px}
+/* Footer logo */
+.f-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.f-logo img{height:46px;width:auto}
+.f-logo-text{font-size:19px;font-weight:700;color:#fff;line-height:1.25;display:flex;flex-direction:column}
+.f-logo-text em{font-style:normal;font-size:10px;font-weight:400;letter-spacing:2px;opacity:.75}
