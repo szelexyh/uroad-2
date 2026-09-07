@@ -168,17 +168,3 @@ img{max-width:100%}
 @media (min-width:861px){
   #nav{margin-left:auto}
 }
-/* ========== 首页 Banner 背景图 ========== */
-.hero,
-.page-title,
-.banner,
-.hero-banner,
-section[class*="hero"],
-section[class*="banner"],
-section[class*="page-title"] {
-    background-image: url('../images/ship.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    position: relative;
-}
