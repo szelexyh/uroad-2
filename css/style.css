@@ -8,7 +8,7 @@ img{max-width:100%}
 
 /* ===== 固定背景：集装箱船大图（滚动不动） ===== */
 .bg-fixed{position:fixed;inset:0;z-index:-2;
-  background:url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat #0d2137}
+  background:url("../images/ship.jpg") center/cover no-repeat #0d2137}
 /* 换自己的图：下载图片存为 images/ship-bg.jpg，把上面 url 改成 url("../images/ship-bg.jpg") */
 
 /* ===== 顶部导航 ===== */
@@ -181,16 +181,4 @@ section[class*="page-title"] {
     background-position: center !important;
     background-repeat: no-repeat !important;
     position: relative;
-}
-/* 让 Banner 上的白色文字更清晰（加一层淡淡的黑遮罩） */
-.hero::before,
-.page-title::before,
-.banner::before,
-section[class*="hero"]::before,
-section[class*="banner"]::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 0;
 }
