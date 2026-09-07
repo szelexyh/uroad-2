@@ -35,6 +35,12 @@
 
 <section class="section">
   <div class="container section-panel">
+<div class="panel-video">
+  <video src="images/sea.mp4" autoplay muted loop playsinline></video>
+  <video src="images/air.mp4" autoplay muted loop playsinline style="display:none"></video>
+  <video src="images/rail.mp4" autoplay muted loop playsinline style="display:none"></video>
+  <video src="images/land.mp4" autoplay muted loop playsinline style="display:none"></video>
+</div>
     <div class="services-layout">
       <ul class="services-tabs">
         <li class="active" data-tab="sea">海运+</li>
@@ -185,5 +191,19 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.services-tabs li');
+  var videos = document.querySelectorAll('.panel-video video');
+  tabs.forEach(function(li, idx){
+    li.addEventListener('click', function(){
+      videos.forEach(function(v, i){
+        if(i === idx){ v.style.display = 'block'; v.play(); }
+        else { v.style.display = 'none'; v.pause(); }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
