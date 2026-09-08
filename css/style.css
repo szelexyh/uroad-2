@@ -173,7 +173,7 @@ img{max-width:100%}
 .panel-video{position:absolute;inset:0;z-index:0}
 .panel-video video{width:100%;height:100%;object-fit:cover}
 /* 白色蒙版：让视频变淡、文字清晰，数值越小视频越明显 */
-.panel-video::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.60)}
+.panel-video::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.80)}
 .services-layout{position:relative;z-index:1}
 
 /* ===== 物流知识 ===== */
@@ -208,6 +208,7 @@ img{max-width:100%}
 .knowledge-grid.cols-2{grid-template-columns:repeat(2,1fr)}
 @media(max-width:900px){.knowledge-grid.cols-2{grid-template-columns:1fr}}
 /* 服务介绍面板文字加深加粗 */
-.tab-panel h2{color:#0d2137;font-weight:700}
-.tab-panel p{color:#3d3d3d;font-weight:500;line-height:2}
-.tab-panel li{color:#3d3d3d;font-weight:500}
+.panel h3{font-weight:700}
+.panel p{color:#3d3d3d;font-weight:500}
+.panel ul li{color:#3d3d3d;font-weight:500}
+
