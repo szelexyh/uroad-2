@@ -173,7 +173,7 @@ img{max-width:100%}
 .panel-video{position:absolute;inset:0;z-index:0}
 .panel-video video{width:100%;height:100%;object-fit:cover}
 /* 白色蒙版：让视频变淡、文字清晰，数值越小视频越明显 */
-.panel-video::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.80)}
+.panel-video::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.70)}
 .services-layout{position:relative;z-index:1}
 
 /* ===== 物流知识 ===== */
