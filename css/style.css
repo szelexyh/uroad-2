@@ -209,6 +209,6 @@ img{max-width:100%}
 @media(max-width:900px){.knowledge-grid.cols-2{grid-template-columns:1fr}}
 /* 服务介绍面板文字加深加粗 */
 .panel h3{font-weight:700}
-.panel p{color:#3d3d3d;font-weight:500}
-.panel ul li{color:#3d3d3d;font-weight:500}
+.panel p{color:#3d3d3d;font-weight:600}
+.panel ul li{color:#3d3d3d;font-weight:600}
 
