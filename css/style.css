@@ -175,3 +175,35 @@ img{max-width:100%}
 /* 白色蒙版：让视频变淡、文字清晰，数值越小视频越明显 */
 .panel-video::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.6)}
 .services-layout{position:relative;z-index:1}
+
+/* ===== 物流知识 ===== */
+.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.k-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12);transition:.3s;display:block}
+.k-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.k-card .k-img{height:190px;background:#dfe7ee}
+.k-card .k-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
+.k-card:hover .k-img img{transform:scale(1.06)}
+.k-card .k-body{padding:22px}
+.k-card h3{font-size:17px;color:#0d2137;line-height:1.5;margin-bottom:10px}
+.k-card p{font-size:14px;color:#666;line-height:1.8;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.k-card .k-meta{margin-top:14px;font-size:12px;color:#999}
+
+.article-wrap{background:#fff;border-radius:12px;padding:50px 60px;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+.crumb{font-size:13px;color:#999;margin-bottom:18px}
+.crumb a{color:#1a6fb5}
+.article-wrap h1{font-size:26px;color:#0d2137;line-height:1.6;margin-bottom:14px}
+.article-info{font-size:13px;color:#999;padding-bottom:22px;border-bottom:1px solid #eee;margin-bottom:28px}
+.article-wrap h2{font-size:19px;color:#0d2137;margin:28px 0 12px}
+.article-wrap p{line-height:2;color:#444;margin-bottom:14px}
+.article-wrap ul{margin:0 0 18px 22px}
+.article-wrap li{line-height:2;color:#444}
+.article-back{display:inline-block;margin-top:35px;font-size:14px;color:#1a6fb5;font-weight:600}
+@media(max-width:900px){
+  .knowledge-grid{grid-template-columns:1fr}
+  .article-wrap{padding:30px 22px}
+}
+/* 相关资源 / 延伸阅读区块 */
+.k-section-title{font-size:22px;font-weight:700;color:#0d2137;margin:40px 0 20px;padding-top:35px;border-top:1px solid #eee}
+.k-tag{display:inline-block;font-size:12px;color:#1a6fb5;margin-bottom:6px;letter-spacing:1px}
+.knowledge-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.knowledge-grid.cols-2{grid-template-columns:1fr}}
