@@ -259,10 +259,10 @@ img{max-width:100%}
     rgba(255,255,255,.55) 55%,
     rgba(255,255,255,0) 78%);
 }
-.promo-inner{position:relative;z-index:2;padding:70px 60px;max-width:700px}
+.promo-inner{position:relative;z-index:2;padding:70px 60px}
 .promo-inner h2{font-size:32px;font-weight:700;color:#0d2137;margin-bottom:26px}
 .promo-list{list-style:none}
-.promo-list li{display:flex;align-items:flex-start;margin-bottom:14px;font-size:16px;color:#2f3a44;font-weight:500;line-height:1.7}
+.promo-list li{display:flex;align-items:flex-start;margin-bottom:14px;font-size:16px;color:#182430;font-weight:600;line-height:1.7}
 .promo-badge{
   flex:none;min-width:78px;text-align:center;
   background:#1a73c0;color:#fff;
