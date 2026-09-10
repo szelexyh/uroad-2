@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>装载规格 - 集装器与集装箱参数速查 - 优路国际物流</title>
+  <title>ULD &amp; Container Specifications | U ROAD Logistics</title>
   <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -14,29 +14,29 @@
 <header id="header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="优路国际物流" onerror="this.style.display='none'">
-      <span class="logo-text">优路国际物流<em>U ROAD INT'L LOGISTICS</em></span>
+      <img src="images/logo.png" alt="U ROAD Int'l Logistics" onerror="this.style.display='none'">
+      <span class="logo-text">U ROAD LOGISTICS<em>INT'L FREIGHT FORWARDING</em></span>
     </a>
     <nav id="nav">
       <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="services.html">服务介绍</a></li>
-        <li><a href="solutions.html">解决方案</a></li>
-        <li><a href="knowledge.html">物流知识</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="contact.html">联系我们</a></li>
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="services-en.html">Services</a></li>
+        <li><a href="solutions-en.html">Solutions</a></li>
+        <li><a href="knowledge-en.html"class="active">Knowledge</a></li>
+        <li><a href="about-en.html" >About Us</a></li>
+        <li><a href="contact-en.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="article-2-en.html" class="lang-btn">EN</a>
-    <button id="menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+    <a href="article-2.html" class="lang-btn">中文</a>
+    <button id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<div class="page-banner"><div><h1>装载规格</h1><p>SPECIFICATIONS</p></div></div>
+<div class="page-banner"><div><h1>物流知识</h1><p>Logistics Knowledge</p></div></div>
 
 <section class="section">
   <div class="container">
-   <div class="article-wrap">
+    <div class="article-wrap">
     <div class="crumb"><a href="index.html">Home</a> &gt; <a href="knowledge-en.html">Knowledge</a> &gt; Specifications</div>
 <h1>ULD &amp; Container Specifications</h1>
 <div class="article-info">Quick reference · Dimensions, volume and payload</div>
@@ -224,58 +224,27 @@
 <script src="js/main.js"></script>
 <script>
 /* ===== 规格切换 ===== */
-<script>
 document.querySelectorAll('.spec-tabs').forEach(function(tabs){
   tabs.addEventListener('click', function(e){
     var btn = e.target.closest('.spec-tab');
     if (!btn) return;
-    var box = tabs.parentElement;
-    box.querySelectorAll('.spec-tab').forEach(function(b){ b.classList.toggle('active', b === btn); });
-    box.querySelectorAll('.spec-panel').forEach(function(p){ p.classList.toggle('active', p.id === btn.getAttribute('data-target')); });
+    var target = btn.getAttribute('data-target');
+
+    /* 高亮：只在本组 4 个标签之间切换 */
+    tabs.querySelectorAll('.spec-tab').forEach(function(b){
+      b.classList.toggle('active', b === btn);
+    });
+
+    /* 面板：从标签块往后走，遇到下一组标签就停 */
+    var el = tabs.nextElementSibling;
+    while (el && !el.classList.contains('spec-tabs')){
+      if (el.classList.contains('spec-panel')){
+        el.classList.toggle('active', el.id === target);
+      }
+      el = el.nextElementSibling;
+    }
   });
 });
-</script>
-
-/* ===== 集装箱尺寸线稿 ===== */
-function drawContainer(id,L,W,H){
-  var el=document.getElementById(id);
-  if(!el){return;}
-  var o='';
-  var VW=640,VH=400;
-  var aL=15*Math.PI/180,aW=35*Math.PI/180;
-  var cL=Math.cos(aL),sL=Math.sin(aL),cW=Math.cos(aW),sW=Math.sin(aW);
-  var ew=cL*L+cW*W,eh=sL*L+sW*W+H;
-  var sc=Math.min((VW-150)/ew,(VH-90)/eh);
-  var bx=(VW-ew*sc)/2+cW*W*sc,by=(VH+eh*sc)/2-10;
-  var u=[cL*L,-sL*L],v=[-cW*W,-sW*W],K=[u[0]+v[0],u[1]+v[1]];
-  function pt(dx,dy,dz){return (bx+dx*sc).toFixed(1)+','+(by+dy*sc-dz*sc).toFixed(1);}
-  function poly(pts,fill){o+='<polygon points="'+pts.join(' ')+'" fill="'+fill+'" stroke="#2f3a44" stroke-width="1.5"/>';}
-  poly([pt(0,0,H),pt(u[0],u[1],H),pt(K[0],K[1],H),pt(v[0],v[1],H)],'#fafbfc');
-  poly([pt(0,0,0),pt(v[0],v[1],0),pt(v[0],v[1],H),pt(0,0,H)],'#e9edf1');
-  poly([pt(0,0,0),pt(u[0],u[1],0),pt(u[0],u[1],H),pt(0,0,H)],'#f4f6f8');
-  var n=Math.max(8,Math.round(L/800));
-  for(var i=1;i<n;i++){
-    var t=i/n;
-    o+='<line x1="'+(bx+u[0]*t*sc).toFixed(1)+'" y1="'+(by+u[1]*t*sc).toFixed(1)+'" x2="'+(bx+u[0]*t*sc).toFixed(1)+'" y2="'+(by+u[1]*t*sc-H*sc).toFixed(1)+'" stroke="#c5cdd5" stroke-width="1"/>';
-  }
-  [0.3,0.5,0.7].forEach(function(t){
-    o+='<line x1="'+(bx+v[0]*t*sc).toFixed(1)+'" y1="'+(by+v[1]*t*sc).toFixed(1)+'" x2="'+(bx+v[0]*t*sc).toFixed(1)+'" y2="'+(by+v[1]*t*sc-H*sc).toFixed(1)+'" stroke="#b6c0c9" stroke-width="1.2"/>';
-  });
-  o+='<line x1="'+bx.toFixed(1)+'" y1="'+by.toFixed(1)+'" x2="'+(bx+u[0]*sc).toFixed(1)+'" y2="'+(by+u[1]*sc).toFixed(1)+'" stroke="#4a5560" stroke-width="3"/>';
-  o+='<line x1="'+bx.toFixed(1)+'" y1="'+by.toFixed(1)+'" x2="'+(bx+v[0]*sc).toFixed(1)+'" y2="'+(by+v[1]*sc).toFixed(1)+'" stroke="#4a5560" stroke-width="3"/>';
-  function label(x,y,str,anchor){
-    o+='<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" font-size="17" fill="#1f2a35" text-anchor="'+(anchor||'middle')+'" font-family="Arial,sans-serif" font-weight="600">'+str+'</text>';
-  }
-  label(bx+u[0]*0.5*sc,by+u[1]*0.5*sc+30,L);
-  label(bx+v[0]*0.5*sc-10,by+v[1]*0.5*sc+28,W);
-  label(bx+v[0]*sc-14,by+v[1]*sc-H*sc*0.5+6,H,'end');
-  label(16,26,'外部尺寸（mm）','start');
-  el.innerHTML='<svg viewBox="0 0 640 400">'+o+'</svg>';
-}
-drawContainer('d-20gp',6058,2438,2591);
-drawContainer('d-40gp',12192,2438,2591);
-drawContainer('d-40hq',12192,2438,2896);
-drawContainer('d-45hq',13716,2438,2896);
 </script>
 </body>
 </html>
