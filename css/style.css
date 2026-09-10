@@ -188,7 +188,7 @@ img{max-width:100%}
 .k-card p{font-size:14px;color:#666;line-height:1.8;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .k-card .k-meta{margin-top:14px;font-size:12px;color:#999}
 
-.article-wrap{background:rgba(255,255,255,.70);border-radius:12px;padding:50px 60px;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+.article-wrap{background:rgba(255,255,255,.90);border-radius:12px;padding:50px 60px;box-shadow:0 5px 20px rgba(0,0,0,.12)}
 .crumb{font-size:13px;color:#999;margin-bottom:18px}
 .crumb a{color:#1a6fb5}
 .article-wrap h1{font-size:26px;color:#0d2137;line-height:1.6;margin-bottom:14px}
