@@ -245,6 +245,46 @@ document.querySelectorAll('.spec-tabs').forEach(function(tabs){
     }
   });
 });
+/* ===== 集装箱尺寸线稿 ===== */
+function drawContainer(id,L,W,H){
+  var el=document.getElementById(id);
+  if(!el){return;}
+  var o='';
+  var VW=640,VH=400;
+  var aL=15*Math.PI/180,aW=35*Math.PI/180;
+  var cL=Math.cos(aL),sL=Math.sin(aL),cW=Math.cos(aW),sW=Math.sin(aW);
+  var ew=cL*L+cW*W,eh=sL*L+sW*W+H;
+  var sc=Math.min((VW-150)/ew,(VH-90)/eh);
+  var bx=(VW-ew*sc)/2+cW*W*sc,by=(VH+eh*sc)/2-10;
+  var u=[cL*L,-sL*L],v=[-cW*W,-sW*W],K=[u[0]+v[0],u[1]+v[1]];
+  function pt(dx,dy,dz){return (bx+dx*sc).toFixed(1)+','+(by+dy*sc-dz*sc).toFixed(1);}
+  function poly(pts,fill){o+='<polygon points="'+pts.join(' ')+'" fill="'+fill+'" stroke="#2f3a44" stroke-width="1.5"/>';}
+  poly([pt(0,0,H),pt(u[0],u[1],H),pt(K[0],K[1],H),pt(v[0],v[1],H)],'#fafbfc');
+  poly([pt(0,0,0),pt(v[0],v[1],0),pt(v[0],v[1],H),pt(0,0,H)],'#e9edf1');
+  poly([pt(0,0,0),pt(u[0],u[1],0),pt(u[0],u[1],H),pt(0,0,H)],'#f4f6f8');
+  var n=Math.max(8,Math.round(L/800));
+  for(var i=1;i<n;i++){
+    var t=i/n;
+    o+='<line x1="'+(bx+u[0]*t*sc).toFixed(1)+'" y1="'+(by+u[1]*t*sc).toFixed(1)+'" x2="'+(bx+u[0]*t*sc).toFixed(1)+'" y2="'+(by+u[1]*t*sc-H*sc).toFixed(1)+'" stroke="#c5cdd5" stroke-width="1"/>';
+  }
+  [0.3,0.5,0.7].forEach(function(t){
+    o+='<line x1="'+(bx+v[0]*t*sc).toFixed(1)+'" y1="'+(by+v[1]*t*sc).toFixed(1)+'" x2="'+(bx+v[0]*t*sc).toFixed(1)+'" y2="'+(by+v[1]*t*sc-H*sc).toFixed(1)+'" stroke="#b6c0c9" stroke-width="1.2"/>';
+  });
+  o+='<line x1="'+bx.toFixed(1)+'" y1="'+by.toFixed(1)+'" x2="'+(bx+u[0]*sc).toFixed(1)+'" y2="'+(by+u[1]*sc).toFixed(1)+'" stroke="#4a5560" stroke-width="3"/>';
+  o+='<line x1="'+bx.toFixed(1)+'" y1="'+by.toFixed(1)+'" x2="'+(bx+v[0]*sc).toFixed(1)+'" y2="'+(by+v[1]*sc).toFixed(1)+'" stroke="#4a5560" stroke-width="3"/>';
+  function label(x,y,str,anchor){
+    o+='<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" font-size="17" fill="#1f2a35" text-anchor="'+(anchor||'middle')+'" font-family="Arial,sans-serif" font-weight="600">'+str+'</text>';
+  }
+  label(bx+u[0]*0.5*sc,by+u[1]*0.5*sc+30,L);
+  label(bx+v[0]*0.5*sc-10,by+v[1]*0.5*sc+28,W);
+  label(bx+v[0]*sc-14,by+v[1]*sc-H*sc*0.5+6,H,'end');
+  label(16,26,'外部尺寸（mm）','start');
+  el.innerHTML='<svg viewBox="0 0 640 400">'+o+'</svg>';
+}
+drawContainer('d-20gp',6058,2438,2591);
+drawContainer('d-40gp',12192,2438,2591);
+drawContainer('d-40hq',12192,2438,2896);
+drawContainer('d-45hq',13716,2438,2896);
 </script>
 </body>
 </html>
