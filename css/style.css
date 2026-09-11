@@ -33,7 +33,7 @@ img{max-width:100%}
   background:linear-gradient(115deg,rgba(8,22,40,.78) 0%,rgba(13,33,55,.5) 50%,rgba(13,33,55,.25) 100%)}
 .hero-content{position:relative;z-index:1;color:#fff;padding:0 20px}
 .hero-content h1{font-size:clamp(32px,5vw,56px);letter-spacing:6px;margin-bottom:14px;text-shadow:0 2px 18px rgba(0,0,0,.5)}
-.hero-content p{font-size:clamp(14px,2vw,20px);letter-spacing:3px;opacity:.9;margin-bottom:36px}
+.hero-content p{font-size:clamp(18px,2.6vw,28px);letter-spacing:2px;opacity:.9;margin-bottom:36px}
 .btn{display:inline-block;background:#1a73c0;color:#fff;padding:14px 46px;border:0;font-size:16px;
   letter-spacing:4px;cursor:pointer;transition:.3s;border-radius:2px;font-family:inherit}
 .btn:hover{background:#4db2ff;transform:translateY(-2px)}
