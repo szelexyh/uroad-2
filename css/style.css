@@ -280,3 +280,6 @@ img{max-width:100%}
 .footer-qr img{width:110px;height:110px;background:#fff;padding:5px;border-radius:8px;transition:transform .25s ease;transform-origin:left bottom}
 .footer-qr img:hover{transform:scale(2.2)}
 .footer-qr span{font-size:13px;opacity:.85;letter-spacing:1px}
+.contact-qr{margin-top:24px;display:inline-block;background:#fff;padding:14px 14px 10px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:center}
+.contact-qr img{width:130px;height:130px;display:block}
+.contact-qr p{margin:8px 0 0;font-size:13px;color:#666}
