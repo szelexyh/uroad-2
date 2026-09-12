@@ -276,3 +276,7 @@ img{max-width:100%}
   .promo-inner h2{font-size:23px;margin-bottom:18px}
   .promo-banner::before{background:rgba(255,255,255,.88)}
 }
+.footer-qr{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.footer-qr img{width:110px;height:110px;background:#fff;padding:5px;border-radius:8px;transition:transform .25s ease;transform-origin:left bottom}
+.footer-qr img:hover{transform:scale(2.2)}
+.footer-qr span{font-size:13px;opacity:.85;letter-spacing:1px}
