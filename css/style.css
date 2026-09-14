@@ -287,8 +287,8 @@ img{max-width:100%}
 .contact-qr img{width:130px;height:130px;display:block}
 .contact-qr p{margin:8px 0 0;font-size:13px;color:#666}
 
-.k-img{aspect-ratio:16/9;overflow:hidden;background:#eef2f5}
-.k-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.k-img{aspect-ratio:16/9;overflow:hidden;background:#fff}
+.k-img img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
 .article-figure{margin:20px 0}
 .article-figure img{max-width:100%;height:auto;border:1px solid #e5e5e5;border-radius:8px;display:block;margin:0 auto}
 .article-figure figcaption{text-align:center;font-size:13px;color:#888;margin-top:8px}
